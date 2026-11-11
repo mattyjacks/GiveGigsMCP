@@ -1,0 +1,27 @@
+{
+  "name": "givegigs-mcp",
+  "version": "1.0.0",
+  "description": "Official public MCP server for the GiveGigs REST API and complete agent guide.",
+  "type": "module",
+  "bin": {
+    "givegigs-mcp": "./build/index.js"
+  },
+  "files": ["build", "docs/*.md", "docs/*.json", "README.md"],
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node build/index.js",
+    "dev": "tsx src/index.ts",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.30",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
